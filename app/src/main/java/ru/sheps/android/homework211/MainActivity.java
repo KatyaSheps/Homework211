@@ -1,14 +1,18 @@
 package ru.sheps.android.homework211;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private EditText mInputMoney;
     private EditText mInputInfo;
@@ -22,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+        mBtnOk.setOnClickListener(this);
+
     }
 
     private void initViews() {
@@ -66,5 +72,12 @@ public class MainActivity extends AppCompatActivity {
         mBankCardChkBx.setChecked(false);
         mMobilePhoneChkBx.setChecked(false);
         mCashAddressChkBx.setChecked(false);
+    }
+
+
+
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(MainActivity.this, "необходимое сообщение", Toast.LENGTH_LONG).show();
     }
 }

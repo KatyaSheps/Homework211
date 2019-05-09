@@ -17,6 +17,7 @@
         android:id="@+id/inputInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:hint="Информация об оплате" />
     <Button
         android:id="@+id/btnOK"
